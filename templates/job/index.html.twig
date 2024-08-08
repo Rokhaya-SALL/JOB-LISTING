@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Liste des offres d'emplois
+{% endblock %}
+
+{% block body %}
+  <h1 class="display-1 text-center mb-5">Liste des offres d'emplois</h1>
+
+  <div class="d-flex flex-row flex-wrap justify-content-center">
+    {% for job in jobs %}
+      <div class="card shadow-pink p-3 mb-4 bg-white rounded-custom" style="width: 20rem; margin: 1rem;">
+        <div class="card-body">
+          <h2 class="card-title h3">
+            <a href="{{ path('job_item', {'id': job.id}) }}" class="text-dark">{{ job.title }}</a>
+          </h2>
+          <h4 class="card-subtitle mb-2 text-muted">{{ job.createdAt|date('d/m/Y') }}</h4>
+          <p class="card-text">{{ job.description|slice(0, 100) ~ '...' }}</p>
+        </div>
+      </div>
+    {% else %}
+      <p class="text-center">Aucune offre enregistrée</p>
+    {% endfor %}
+  </div>
+{% endblock %}
