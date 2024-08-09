@@ -9,7 +9,13 @@
                 <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ path('categories-list') }}">Liste des catégories</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ path('job_list') }}">Liste d'offres d'emplois</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('newsletter_subscribe') }}">Newsletter</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 ml-auto" method="get" action="{{ path('job_list') }}">

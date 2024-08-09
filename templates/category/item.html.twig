@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Liste des offres d'emplois
+  Liste des offres d'emplois pour la catégorie {{ categorie.name }}
 {% endblock %}
 
 {% block body %}
-
-  <h1 class="display-1 text-center mb-5">Liste des offres d'emplois</h1>
+  <h1 class="display-1 text-center mb-5">Liste des offres d'emplois pour la catégorie {{ categorie.name }}</h1>
 
   <div class="d-flex flex-row flex-wrap justify-content-center">
-    {% for job in jobs %}
+    {% for job in categorie.jobs %}
       <div class="card shadow-pink p-3 mb-4 bg-white rounded-custom" style="width: 80rem; margin: 1rem;">
         <div class="card-body">
           <h2 class="card-title h3">
