@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Nouvelle Offre d'Emploi
+{% endblock %}
+
+{% block body %}
+  <h1 class="display-1 text-center mb-5">Créer une Nouvelle Offre d'Emploi</h1>
+
+  <div class="d-flex flex-column align-items-center">
+    <div class="card shadow-pink p-3 mb-4 bg-white rounded-custom" style="width: 40rem; margin: 1rem;">
+      <div class="card-body">
+        {{ form_start(jobForm) }}
+          {{ form_row(jobForm.title) }}
+          {{ form_row(jobForm.description) }}
+          {{ form_row(jobForm.location) }}
+          {{ form_row(jobForm.createdAt) }}
+          {{ form_row(jobForm.company) }}
+          {{ form_row(jobForm.category) }}
+          <button type="submit" class="btn btn-success">Créer l'Offre</button>
+        {{ form_end(jobForm) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
